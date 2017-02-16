@@ -1,5 +1,5 @@
 rm(list = ls())
-source("./0_source.R")
+source("https://raw.githubusercontent.com/liyujiao1026/IKEA_0110/master/0_source.R")
 
 
 
@@ -15,7 +15,13 @@ write.csv( cluster_result$data.SOM , "./data/data_SOM.csv", row.names = F)
 
 # 2. Bootstrap
 Bootstrap_Haparanda <- Func_Bootstrap_cmp(treat_ID = treat_ID , invYear = invYear, repTimes = repTimes, Donor_ID = Donor_ID)
-saveRDS(Bootstrap_Haparanda, "./Empirical_study/Empirical_result/Bootstrap_Haparanda")
+
+saveRDS(Bootstrap_Haparanda, "./Bootstrap_Haparanda")
+write.csv(Bootstrap_Haparanda,"Bootstrap_Haparanda.csv", row.names = F)
+
+
+
+
 
 
 #-------------------------------------------------------------#
@@ -63,5 +69,5 @@ lines(x= y.pre[,1], gap.low, ylim = c(0, 120))
 
 
 we <- unlist(sapply(1:500, function(i){subset(Bootstrap.Result[3,i]$synth.tables$tab.w, w.weights >= 0.1)$unit.numbers}))
-we
+
 
