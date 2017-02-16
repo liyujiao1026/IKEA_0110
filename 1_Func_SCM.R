@@ -1,6 +1,6 @@
 # function of running SCM
 
-data_firm <- read.csv("./data/IKEA_data_1207.csv")
+data_firm <- read.csv("https://raw.githubusercontent.com/liyujiao1026/IKEA_0110/master/IKEA_data_1207.csv")
 data_firm$Kommun_name <- as.character(data_firm$Kommun_name)
 
 
